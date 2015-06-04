@@ -3,7 +3,7 @@ app.filter('VideoDescriptionFilter', function() {
 	return function(videos) {
 		var regex = {
 			appName: /^(.*)(\s)?(\((\$([0-9]*\.[0-9]+|[0-9]+)|FREE|[0-9]+\:[0-9]+)\))(\s)*$/i,
-			appLink: /^(Android|iOS|WP8|Steam)(\s)*(\((\$([0-9]*\.[0-9]+|[0-9]+)|FREE)\))?\:(\s)*http(s)?\:\/{2}(.*)$/i
+			appLink: /^(Android|iOS|WP8|Steam|Web)(\s)*(\((\$([0-9]*\.[0-9]+|[0-9]+)|FREE)\))?\:(\s)*http(s)?\:\/{2}(.*)$/i
 		}
 
 		return videos.map(function(video) {
