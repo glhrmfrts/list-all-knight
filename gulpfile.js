@@ -6,12 +6,12 @@ var connect = require('connect')
 var serveStatic = require('serve-static')
 
 var paths = {
-	style: ['./assets/src/stylus/*.styl'],
+	style: ['./src/stylus/*.styl'],
 	js: [
-		'./assets/src/js/app.js', 
-		'./assets/src/js/services/*.js', 
-		'./assets/src/js/filters/*.js', 
-		'./assets/src/js/controllers/*.js'
+		'./src/js/app.js', 
+		'./src/js/services/*.js', 
+		'./src/js/filters/*.js', 
+		'./src/js/controllers/*.js'
 	]
 }
 
