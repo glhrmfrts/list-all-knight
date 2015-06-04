@@ -22,7 +22,6 @@ app.service('VideoService', ['$http', function($http) {
 	VideoService.prototype.onResult = function(callback) {
 		var self = this
 		return function(res) {
-			console.log(res.items[0])
 			self.params.pageToken = res.nextPageToken
 			callback(res.items.pop().snippet)
 		}
