@@ -1,0 +1,74 @@
+<!doctype html>
+<html ng-app="listAllKnight">
+<head>
+	<meta charset="utf-8">
+	<meta name="title" content="List All Knight">
+	<meta name="description" content="A self-updating list of the latest apps and games featured in Vsauce3's App All Knight series">
+	<title>List All Knight</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/app.css">
+	<script src="assets/js/angular.min.js"></script>
+	<script src="assets/js/app.js"></script>
+</head>
+<body>
+<div id="theHeader">
+	<div class="text-center container-fluid">
+		<h1 class="font-bold font-lg">
+			List All Knight ↓
+		</h1>
+		<p class="lead">
+			A self-updating list of the latest apps and games featured in Vsauce3's <a href="https://www.youtube.com/playlist?list=PLiyjwVB09t5zm53TvttbxLE_YPrL8VkSm">App All Knight</a> series
+		</p>
+	</div>
+</div>
+<div id="theList">
+	<div class="container-fluid">
+		<div id="list" ng-controller="ListController">
+			<div
+				ng-repeat="video in videos"
+				class="row-fluid video">
+
+				<h1 class="text-center" ng-bind="video.title"></h1>
+				<small class="text-center full-width"><a class="btn btn-default btn-sm" href="http://youtube.com/watch?v={{video.resourceId.videoId}}&list={{video.playlistId}}" target="_blank">Watch the video ►</a></small>
+
+				<ul class="nav nav-stacked">
+					<li class="app" ng-repeat="app in video.apps" >
+
+						<a class="font-bold"
+							ng-class="{'active': app.open}"
+							ng-click="app.open = ! app.open">
+
+							<span>{{app.name}}</span>
+
+							<span class="pull-right glyphicon" 
+								ng-class="{'glyphicon-chevron-down': !app.open, 'glyphicon-chevron-up': app.open}"></span>
+
+						</a>
+
+						<ul class="nav nav-stacked" ng-show="app.open">
+							<li ng-repeat="link in app.links">
+								<a href="{{link.href}}" target="_blank">► {{link.plat}}</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="row-fluid text-center" id="btn-container">
+				<a class="btn btn-lg" ng-click="getVideo()" ng-disabled="loading">
+					<span ng-show="!loading">Load more</span>
+					<span ng-show="loading">Loading</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="theFooter">
+	<div class="container-fluid text-center">
+		<p>
+			Made with ♥ by glhrmfrts <br />
+			Because Vsauces are awesome
+		</p>
+	</div>
+</div>
+</body>
+</html>
