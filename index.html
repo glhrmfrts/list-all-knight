@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="title" content="List All Knight">
 	<meta name="description" content="A self-updating list of the latest apps and games featured in Vsauce3's App All Knight series">
+	<meta name="og:title" content="List All Knight">
+	<meta name="og:description" content="A self-updating list of the latest apps and games featured in Vsauce3's App All Knight series">
 	<meta name="viewport" content="width=device-width user-scalable=no">
 	<title>List All Knight</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -33,7 +35,7 @@
 				<small class="text-center full-width"><a class="btn btn-default btn-sm" href="http://youtube.com/watch?v={{video.resourceId.videoId}}&list={{video.playlistId}}" target="_blank">Watch the video ►</a></small>
 
 				<ul class="nav nav-stacked">
-					<li class="app" ng-repeat="app in video.apps" >
+					<li class="app" ng-repeat="app in video.apps">
 
 						<a class="font-bold"
 							ng-class="{'active': app.open}"
