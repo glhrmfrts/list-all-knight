@@ -38,4 +38,6 @@ gulp.task('serve', function() {
 	connect().use(serveStatic(__dirname)).listen(8080)
 })
 
-gulp.task('default', ['watch', 'js', 'style', 'serve'])
+gulp.task('build', ['style', 'js'])
+
+gulp.task('default', ['build', 'serve', 'watch'])
